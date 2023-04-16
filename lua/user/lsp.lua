@@ -7,6 +7,7 @@ local M = {
       "hrsh7th/cmp-nvim-lsp",
       commit = "0e6b2ed705ddcff9738ec4ea838141654f12eeef",
     },
+    { "nanotee/sqls.nvim", },
   },
 }
 
@@ -45,8 +46,14 @@ function M.config()
       client.server_capabilities.documentFormattingProvider = false
     end
 
+    if client.name == "sqls" then
+      client.server_capabilities.documentFormattingProvider = false
+    end
     lsp_keymaps(bufnr)
     require("illuminate").on_attach(client)
+    -- i need this because of oracle
+    require("sqls").on_attach(client, bufnr)
+
   end
 
   for _, server in pairs(require("utils").servers) do

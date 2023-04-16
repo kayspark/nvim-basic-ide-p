@@ -35,6 +35,9 @@ local M = {
       "hrsh7th/cmp-nvim-lua",
       commit = "f3491638d123cfd2c8048aefaf66d246ff250ca6",
     },
+
+    {'github/copilot.vim'},
+    { "hrsh7th/cmp-copilot" },
   },
   event = {
     "InsertEnter",
@@ -60,6 +63,7 @@ function M.config()
     Field = "",
     Variable = "",
     Class = "",
+    Copilot = "c",
     Interface = "",
     Module = "",
     Property = "",
@@ -134,6 +138,7 @@ function M.config()
         vim_item.kind = kind_icons[vim_item.kind]
         vim_item.menu = ({
           nvim_lsp = "",
+          nvim_copilot = "",
           nvim_lua = "",
           luasnip = "",
           buffer = "",
@@ -145,6 +150,7 @@ function M.config()
     },
     sources = {
       { name = "nvim_lsp" },
+      { name = "copilot" },
       { name = "nvim_lua" },
       { name = "luasnip" },
       { name = "buffer" },
