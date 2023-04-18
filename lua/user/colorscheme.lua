@@ -22,7 +22,7 @@ end
 
 vim.g.set_background = "dark"
 vim.g.zenburned = {
-  darkness = "warm", -- "stark" or "warm"
+  darkness = "default", -- "stark" or "warm"
   solid_line_nr = true,
   lighten_comments = 50,
   lighten_n0n_text = 45,
