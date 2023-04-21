@@ -88,17 +88,17 @@ function M.config()
       "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
       "Buffers",
     },
-    ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
-    ["w"] = { "<cmd>w!<CR>", "Save" },
-    ["q"] = { "<cmd>q!<CR>", "Quit" },
-    ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
-    ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
+    ["e"] = { "<cmd>NvimTreeToggle<cr>", "explore" },
+   -- ["w"] = { "<cmd>w!<CR>", "Save" },
+   -- ["q"] = { "<cmd>q!<CR>", "Quit" },
+   -- ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
+   -- ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
     ["f"] = {
       "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-      "Find files",
+      "find files",
     },
-    ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
-    ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
+ --   ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
+ --   ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
 
     --    p = {
     --      name = "Packer",
@@ -110,7 +110,7 @@ function M.config()
     --},
 
     g = {
-      name = "Git",
+      name = "git",
       g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
       j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
       k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
@@ -133,7 +133,7 @@ function M.config()
     },
 
     l = {
-      name = "LSP",
+      name = "lsp",
       a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
       d = {
         "<cmd>Telescope diagnostics bufnr=0<cr>",
@@ -163,8 +163,12 @@ function M.config()
         "Workspace Symbols",
       },
     },
+
+    o = {
+      name = "org",
+    },
     s = {
-      name = "Search",
+      name = "find/search",
       b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
       c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
       h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
@@ -176,14 +180,14 @@ function M.config()
     },
 
     t = {
-      name = "Terminal",
---      n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
---      u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
---      t = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
---      p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
+      name = "terminal",
       f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
       h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
       v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
+--      n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
+--      u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
+--      t = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
+      p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
     },
   }
 
